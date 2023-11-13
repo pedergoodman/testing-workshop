@@ -17,16 +17,37 @@ Then run this code with `node 2.todo`
 
 const {sum, subtract} = require('./math')
 
-let result, expected
+let result, expected 
+
 
 result = sum(3, 7)
 expected = 10
-if (result !== expected) {
-  throw new Error(`${result} is not equal to ${expected}`)
+expect(result).toBe(expected)
+
+
+
+//* original - per function
+// if (result !== expected) {
+//   throw new Error(`${result} is not equal to ${expected}`)
+// }
+
+// result = subtract(7, 3)
+// expected = 4
+// if (result !== expected) {
+//   throw new Error(`${result} is not equal to ${expected}`)
+// }
+
+// cleaner code, but has problems
+// can't detect which function is broken or what is broken -- the message isn't clear
+// it's not running all of our tests
+
+function expect(actual) {
+  return {
+    toBe(expected) {
+      if (result !== expected) {
+        throw new Error(`${actual} is not equal to ${expected}`)
+      }
+    }
+  }
 }
 
-result = subtract(7, 3)
-expected = 4
-if (result !== expected) {
-  throw new Error(`${result} is not equal to ${expected}`)
-}
