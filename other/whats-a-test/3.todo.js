@@ -29,13 +29,31 @@ const {sum, subtract} = require('./math')
 
 let result, expected
 
+test('sum adds numbers', () => {
 result = sum(3, 7)
 expected = 10
 expect(result).toBe(expected)
 
-result = subtract(7, 3)
-expected = 4
-expect(result).toBe(expected)
+})
+
+test('subtracts subtracts numbers', () => {
+  result = subtract(7, 3)
+  expected = 4
+  expect(result).toBe(expected)
+})
+
+
+
+function test(title, callback) {
+  try {
+    callback()
+    console.log(`passes ✅ ${title}`);
+    
+  } catch (error) {
+    console.log(`fails ❌ ${title}`);
+    console.log(Error)
+  }
+}
 
 function expect(actual) {
   return {

@@ -40,6 +40,7 @@
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@testing-library/cypress": "^8.0.2",
+    "@types/jest": "^29.5.8",
     "all-contributors-cli": "6.20.0",
     "as-a": "2.2.0",
     "axios": "0.26.1",
@@ -53,7 +54,7 @@
     "eslint-config-kentcdodds": "20.1.0",
     "eslint-import-resolver-jest": "3.0.2",
     "eslint-plugin-cypress": "2.12.1",
-    "faker": "6.6.6",
+    "faker": "^6.6.6",
     "fs-extra": "10.0.1",
     "husky": "7.0.4",
     "inquirer": "8.2.1",
@@ -122,6 +123,8 @@
   "dependencies": {
     "@babel/runtime": "^7.17.8",
     "core-js": "^3.21.1",
+    "express-jwt": "^8.4.1",
+    "passport-local": "^1.0.0",
     "regenerator-runtime": "^0.13.9"
   }
 }
